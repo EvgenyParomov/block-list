@@ -13,7 +13,7 @@ export const createInstance = async <T>({
   method,
   params,
   data,
-  headers
+  headers,
 }: {
   url: string;
   method: "get" | "post" | "put" | "delete" | "patch";

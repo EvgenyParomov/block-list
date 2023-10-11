@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export function UiHeader({
   className,
-  right
+  right,
 }: {
   className?: string;
   right?: ReactNode;

@@ -12,7 +12,7 @@ export function useSignOut() {
     mutationFn: authControllerSignOut,
     async onSuccess() {
       router.push(ROUTES.SIGN_IN);
-      resetSession()
+      resetSession();
     },
   });
 

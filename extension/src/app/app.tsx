@@ -4,7 +4,7 @@ import { AppRouter } from "./app-router";
 export function App() {
   return (
     <AppProvider>
-      <AppRouter/>
+      <AppRouter />
     </AppProvider>
   );
 }

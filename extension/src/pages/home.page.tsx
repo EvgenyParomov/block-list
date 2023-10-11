@@ -5,11 +5,10 @@ import { UiButton } from "@/shared/ui/ui-button";
 import { UiLogo } from "@/shared/ui/ui-logo";
 
 export function HomePage() {
-
   return (
     <div className="p-8 flex flex-col gap-3 ">
       <UiLogo />
-      <ToggleBlockingButton/>
+      <ToggleBlockingButton />
       <UiButton variant="outlined" onClick={() => createTab(ADMIN_URL)}>
         Manage extension
       </UiButton>

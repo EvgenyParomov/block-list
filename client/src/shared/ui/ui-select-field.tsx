@@ -19,7 +19,7 @@ export function UiSelectField({
   error,
   label,
   selectProps: inputProps,
-  options
+  options,
 }: UiSelectFieldProps) {
   const id = useId();
   return (
@@ -37,8 +37,11 @@ export function UiSelectField({
           "rounded border border-slate-300 focus:border-teal-600 px-2 h-10 outline-none",
         )}
       >
-        {options?.map((option, i) => <option key={i} value={option.value}>{option.label}</option>)}
-
+        {options?.map((option, i) => (
+          <option key={i} value={option.value}>
+            {option.label}
+          </option>
+        ))}
       </select>
       {error && <div className="text-rose-400 text-sm">{error}</div>}
     </div>

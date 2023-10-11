@@ -19,7 +19,6 @@ export function AddBlockItemForm() {
         options={typeOptions}
         selectProps={{
           ...register("type"),
-       
         }}
       />
       <UiTextField

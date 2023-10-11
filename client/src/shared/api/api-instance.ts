@@ -10,7 +10,7 @@ export const apiInstance = axios.create({
 
 export const createInstance = <T>(
   config: AxiosRequestConfig,
-  options?: AxiosRequestConfig
+  options?: AxiosRequestConfig,
 ): Promise<T> => {
   return apiInstance({
     ...config,
@@ -18,7 +18,6 @@ export const createInstance = <T>(
   }).then((r) => r.data);
 };
 
+export type BodyType<Data> = Data;
 
-export type BodyType<Data> = Data
-
-export type ErrorType<Error> = AxiosError<Error>
+export type ErrorType<Error> = AxiosError<Error>;

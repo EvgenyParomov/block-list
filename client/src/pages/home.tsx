@@ -20,7 +20,7 @@ export function HomePage() {
         <main className="pt-10 px-5">
           <h1 className="text-2xl mb-8">Block list</h1>
           <AddBlockItemForm />
-          <BlockList className="mt-3"/>
+          <BlockList className="mt-3" />
         </main>
       </div>
     </div>

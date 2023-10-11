@@ -27,7 +27,7 @@ export function BlockItem({
         disabled={removeBlockItemMutation.isLoading}
         onClick={handleRemove}
       >
-        <Trash className="w-5 h-5"/>
+        <Trash className="w-5 h-5" />
       </button>
     </div>
   );

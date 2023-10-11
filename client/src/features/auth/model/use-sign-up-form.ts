@@ -19,7 +19,7 @@ export function useSignUpForm() {
     },
   });
 
-  const errorMessage = signUpMutation.error ? 'Sign up faled' : undefined
+  const errorMessage = signUpMutation.error ? "Sign up faled" : undefined;
 
   return {
     register,

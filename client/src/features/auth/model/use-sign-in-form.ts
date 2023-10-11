@@ -19,7 +19,7 @@ export function useSignInForm() {
     },
   });
 
-  const errorMessage = signInMutation.error ? 'Sign in faled' : undefined
+  const errorMessage = signInMutation.error ? "Sign in faled" : undefined;
 
   return {
     register,

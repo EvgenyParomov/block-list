@@ -1,8 +1,11 @@
-import { BlockItemDtoType, blockListControllerGetList } from "@/shared/api/generated";
+import {
+  BlockItemDtoType,
+  blockListControllerGetList,
+} from "@/shared/api/generated";
 import {
   NetRule,
   NetRuleActionType,
-  NetRuleResourceType
+  NetRuleResourceType,
 } from "@/shared/lib/browser";
 
 export async function getBlockListNetRules() {
@@ -16,13 +19,13 @@ export async function getBlockListNetRules() {
         action: { type: NetRuleActionType.BLOCK },
         condition: item.data.startsWith("regexp:")
           ? {
-            regexFilter: item.data.replace("regexp:", ""),
-            resourceTypes: [NetRuleResourceType.MAIN_FRAME],
-          }
+              regexFilter: item.data.replace("regexp:", ""),
+              resourceTypes: [NetRuleResourceType.MAIN_FRAME],
+            }
           : {
-            urlFilter: item.data,
-            resourceTypes: [NetRuleResourceType.MAIN_FRAME],
-          },
-      })
+              urlFilter: item.data,
+              resourceTypes: [NetRuleResourceType.MAIN_FRAME],
+            },
+      }),
     );
 }
