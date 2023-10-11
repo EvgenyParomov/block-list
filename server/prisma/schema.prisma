@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  hash  String
+  salt  String
+
+  account   Account?
+  blockList BlockList?
+}
+
+model Account {
+  id Int @id @default(autoincrement())
+
+  ownerId Int  @unique
+  owner   User @relation(fields: [ownerId], references: [id])
+
+  isBlockingEnabled Boolean
+}
+
+model BlockList {
+  id Int @id @default(autoincrement())
+
+  ownerId Int  @unique
+  owner   User @relation(fields: [ownerId], references: [id])
+
+  items BlockItem[]
+}
+
+model BlockItem {
+  id Int @id @default(autoincrement())
+
+  blockListId Int
+  blockList   BlockList @relation(fields: [blockListId], references: [id])
+
+  type BlockItemType
+  data String
+
+  createdAt DateTime @default(now())
+}
+
+enum BlockItemType {
+  Website
+  KeyWord
+}
